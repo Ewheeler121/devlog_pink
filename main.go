@@ -17,7 +17,7 @@ func main() {
 	http.HandleFunc("/favicon.ico", faviconHandler)
 	http.HandleFunc("/", indexHandler)
 
-	err := http.ListenAndServeTLS("127.0.0.1:3000", "certs/domain.cert.pem", "certs/private.key.pem", nil)
+	err := http.ListenAndServe("127.0.0.1:3000", nil)
 	if err != nil {
 		panic("could not start server:" + err.Error())
 	}
